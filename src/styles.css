@@ -3,9 +3,11 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: rgb(172, 119, 41);
+  background-color: rgb(128, 104, 69);
 }
 
 #picture-frame {
   border: 1px solid black;
+  height: 20px;
+  width: 100%;
 }
