@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/blain-crawford/image-slider-practice/issues"
   },
-  "homepage": "https://github.com/blain-crawford/image-slider-practice#readme"
+  "homepage": "https://github.com/blain-crawford/image-slider-practice#readme",
+  "devDependencies": {
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2"
+  }
 }
