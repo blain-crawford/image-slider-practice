@@ -43,43 +43,27 @@ const populatePictureFrom = (() => {
 const scrollPictures = (() => {
   let pictures = document.querySelectorAll('.picture');
   let scrollAmount = 0;
-  let clickOn = false;
-
-  function turnOffScroll() {
-    clickOn = false;
-    console.log(clickOn);
-  }
 
   function scrollRight() {
-    clickOn = true;
-    if (clickOn === true) {
-      while (scrollAmount < 1200) {
-        setTimeout(scrollAmount += 20, 3000);
-        console.log(scrollAmount);
-        pictures.forEach((picture) => {
-          picture.style.cssText = `transform: translate(${scrollAmount}px);`;
-        });
-      }
+    if (scrollAmount < 1200) {
+      scrollAmount += 200;
+      pictures.forEach((picture) => {
+        picture.style.cssText = `transform: translate(${scrollAmount}px);`;
+      });
     }
   }
 
   function scrollLeft() {
-    clickOn = true;
-    if (clickOn === true) {
-      while (scrollAmount > -1200) {
-        setTimeout(scrollAmount -= 20, 3000);
-        console.log(scrollAmount);
-        pictures.forEach((picture) => {
-          picture.style.cssText = `transform: translate(${scrollAmount}px);`;
-        });
-      }
+    if (scrollAmount > -1200) {
+      scrollAmount -= 200;
+      pictures.forEach((picture) => {
+        picture.style.cssText = `transform: translate(${scrollAmount}px);`;
+      });
     }
   }
 
-  return { scrollLeft, scrollRight, turnOffScroll };
+  return { scrollLeft, scrollRight };
 })();
 
 leftScroller.addEventListener('mousedown', scrollPictures.scrollLeft, false);
 rightScroller.addEventListener('mousedown', scrollPictures.scrollRight, false);
-leftScroller.addEventListener('mouseup', scrollPictures.turnOffScroll, false);
-rightScroller.addEventListener('mouseup', scrollPictures.turnOffScroll, false);
