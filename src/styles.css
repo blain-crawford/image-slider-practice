@@ -8,9 +8,7 @@ body {
 
 #picture-frame {
   display: flex;
-  border: 1px solid black;
-  height: 400px;
-  width: 90%;
+  width: 50%;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -19,7 +17,6 @@ body {
 
 #picture-scroll-left {
   width: 2%;
-  border-right: 1px solid black;
   margin-right: auto;
   display: flex;
   justify-content: center;
@@ -27,12 +24,6 @@ body {
   font-size: 30px;
 }
 
-.picture {
-  height: 400px;
-  border: 1px solid black;
-  position: relative;
-  right: 10px;
-}
 
 #picture-scroll-left:hover {
   font-size: 35px;
@@ -42,14 +33,23 @@ body {
 #pictures {
   flex: 1;
   display: flex;
+  justify-content: space-evenly;
   overflow: hidden;
   gap: 10px;
+}
+
+.picture {
+  height: 300px;
+  border: 1px solid black;
+  position: relative;
+  right: 10px;
+  border-radius: 25px;
+  transition: .5s ease-in-out;
 }
 
 #picture-scroll-right { 
   width: 2%;
   margin-left: auto;
-  border-left: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
