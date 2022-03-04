@@ -18,7 +18,7 @@ body {
 }
 
 #picture-scroll-left {
-  width: 5%;
+  width: 2%;
   border-right: 1px solid black;
   margin-right: auto;
   display: flex;
@@ -47,7 +47,7 @@ body {
 }
 
 #picture-scroll-right { 
-  width: 5%;
+  width: 2%;
   margin-left: auto;
   border-left: 1px solid black;
   display: flex;
