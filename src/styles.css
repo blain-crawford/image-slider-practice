@@ -10,7 +10,7 @@ body {
   display: flex;
   width: 50%;
   position: fixed;
-  top: 50%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -57,6 +57,62 @@ body {
 }
 
 #picture-scroll-right:hover { 
+  font-size: 35px;
+  border-left: 1.5px solid black;
+}
+#second-picture-frame {
+  display: flex;
+  width: 300px;
+  position: fixed;
+  top: 90%;
+  left: 58%;
+  transform: translate(-100%, -100%);
+}
+
+#second-picture-scroll-left {
+  color: white;
+  width: 2%;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+
+#second-picture-scroll-left:hover {
+  font-size: 35px;
+  border-right: 1.5px solid black;
+}
+
+#second-pictures {
+  flex: 1;
+  display: flex;
+  justify-content: space-evenly;
+  overflow: hidden;
+  gap: 10px;
+}
+
+.second-picture {
+  height: 300px;
+  border: 1px solid black;
+  position: relative;
+  right: 10px;
+  border-radius: 25px;
+  transition: .5s ease-in-out;
+}
+
+#second-picture-scroll-right { 
+  color: white;
+  width: 2%;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+#second-picture-scroll-right:hover { 
   font-size: 35px;
   border-left: 1.5px solid black;
 }

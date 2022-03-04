@@ -13,8 +13,11 @@ import sneak from './images/sneak.jpg';
 import snow from './images/snow.jpg';
 import solar from './images/solar.jpg';
 const pictureScroller = document.querySelector('#pictures');
+const secondPictureScroller = document.querySelector('#second-pictures');
 const leftScroller = document.querySelector('#picture-scroll-left');
 const rightScroller = document.querySelector('#picture-scroll-right');
+const secondLeftScroller = document.querySelector('#second-picture-scroll-left');
+const secondRightScroller = document.querySelector('#second-picture-scroll-right');
 let imageArray = [
   apple,
   bald,
@@ -67,3 +70,7 @@ const scrollPictures = (() => {
 
 leftScroller.addEventListener('mousedown', scrollPictures.scrollLeft, false);
 rightScroller.addEventListener('mousedown', scrollPictures.scrollRight, false);
+
+const populateSecondPictureFrom = (() => {
+  
+})();
