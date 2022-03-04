@@ -60,9 +60,10 @@ body {
   font-size: 35px;
   border-left: 1.5px solid black;
 }
+
 #second-picture-frame {
   display: flex;
-  width: 300px;
+  width: 350px;
   position: fixed;
   top: 90%;
   left: 58%;
@@ -74,7 +75,7 @@ body {
   width: 2%;
   margin-right: auto;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   font-size: 30px;
 }
@@ -107,7 +108,7 @@ body {
   width: 2%;
   margin-left: auto;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   font-size: 30px;
 }

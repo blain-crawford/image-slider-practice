@@ -12,6 +12,7 @@ import kiss from './images/kiss.jpg';
 import sneak from './images/sneak.jpg';
 import snow from './images/snow.jpg';
 import solar from './images/solar.jpg';
+
 const pictureScroller = document.querySelector('#pictures');
 const secondPictureScroller = document.querySelector('#second-pictures');
 const leftScroller = document.querySelector('#picture-scroll-left');
@@ -72,5 +73,8 @@ leftScroller.addEventListener('mousedown', scrollPictures.scrollLeft, false);
 rightScroller.addEventListener('mousedown', scrollPictures.scrollRight, false);
 
 const populateSecondPictureFrom = (() => {
-  
+  let apple = new Image();
+  apple.src = imageArray[0]
+  apple.classList.add('second-picture');
+  secondPictureScroller.appendChild(apple);
 })();
