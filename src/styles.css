@@ -40,7 +40,6 @@ body {
 
 .picture {
   height: 300px;
-  border: 1px solid black;
   position: relative;
   right: 10px;
   border-radius: 25px;
@@ -63,6 +62,7 @@ body {
 
 #second-picture-frame {
   display: flex;
+  justify-content: space-between;
   width: 350px;
   position: fixed;
   top: 90%;
@@ -72,7 +72,7 @@ body {
 
 #second-picture-scroll-left {
   color: white;
-  width: 2%;
+  width: 5%;
   margin-right: auto;
   display: flex;
   justify-content: flex-end;
@@ -83,29 +83,28 @@ body {
 
 #second-picture-scroll-left:hover {
   font-size: 35px;
-  border-right: 1.5px solid black;
+  border-right: 1.5px solid rgb(255, 255, 255);
 }
 
 #second-pictures {
-  flex: 1;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  flex: 1;
+  width: 90%;
   overflow: hidden;
-  gap: 10px;
 }
 
 .second-picture {
   height: 300px;
-  border: 1px solid black;
   position: relative;
-  right: 10px;
   border-radius: 25px;
   transition: .5s ease-in-out;
+  margin: 5px;
 }
 
 #second-picture-scroll-right { 
   color: white;
-  width: 2%;
+  width: 5%;
   margin-left: auto;
   display: flex;
   justify-content: flex-start;
@@ -115,5 +114,5 @@ body {
 
 #second-picture-scroll-right:hover { 
   font-size: 35px;
-  border-left: 1.5px solid black;
+  border-left: 1.5px solid rgb(255, 255, 255);
 }

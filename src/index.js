@@ -72,9 +72,48 @@ const scrollPictures = (() => {
 leftScroller.addEventListener('mousedown', scrollPictures.scrollLeft, false);
 rightScroller.addEventListener('mousedown', scrollPictures.scrollRight, false);
 
-const populateSecondPictureFrom = (() => {
-  let apple = new Image();
-  apple.src = imageArray[0]
-  apple.classList.add('second-picture');
-  secondPictureScroller.appendChild(apple);
+const populateSecondPictureFrom = (image) => {
+  secondPictureScroller.innerHTML = '';
+  let shownImage = new Image();
+  shownImage.src = image
+  shownImage.classList.add('second-picture');
+  secondPictureScroller.appendChild(shownImage);
+};
+
+populateSecondPictureFrom(imageArray[0]);
+
+const scrollSecondPictures = (() => {
+  let secondPictures = document.querySelector('#second-pictures');
+  let currentImage = 0;
+
+  function secondScrollLeft() {
+    let secondNewImage = new Image();
+
+    if(currentImage === 0) {
+      currentImage = imageArray.length - 1;
+      populateSecondPictureFrom(imageArray[currentImage])
+    } else {
+      currentImage -= 1;
+      populateSecondPictureFrom(imageArray[currentImage]);
+    }
+
+  }
+
+  function secondScrollRight() {
+    let secondNewImage = new Image();
+
+    if(currentImage === imageArray.length - 1) {
+      currentImage = 0;
+      populateSecondPictureFrom(imageArray[currentImage])
+    } else {
+      currentImage += 1;
+      populateSecondPictureFrom(imageArray[currentImage]);
+    }
+
+  }
+
+  return { secondScrollLeft, secondScrollRight }
 })();
+
+secondLeftScroller.addEventListener('mousedown', scrollSecondPictures.secondScrollLeft, false);
+secondRightScroller.addEventListener('mousedown', scrollSecondPictures.secondScrollRight, false);
