@@ -63,6 +63,7 @@ body {
 #second-picture-frame {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 350px;
   position: fixed;
   top: 90%;
@@ -117,8 +118,27 @@ body {
   border-left: 1.5px solid rgb(255, 255, 255);
 }
 
-#picture-indicator {
-  border: 3px solid black;
-  height: 2px;
-  width: 350px;
+#second-picture-frame-footer {
+  width: 100%;
+}
+
+#picture-indicators {
+  height: 15px;
+  width: 300px;
+  margin: 5px auto;
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  padding: 2px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
+  border-radius: 150px;
+}
+
+.current-picture {
+  background-color: black;
 }

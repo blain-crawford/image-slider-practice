@@ -19,6 +19,7 @@ const leftScroller = document.querySelector('#picture-scroll-left');
 const rightScroller = document.querySelector('#picture-scroll-right');
 const secondLeftScroller = document.querySelector('#second-picture-scroll-left');
 const secondRightScroller = document.querySelector('#second-picture-scroll-right');
+const pictureIndicators = document.querySelector('#picture-indicators');
 let imageArray = [
   apple,
   bald,
@@ -76,15 +77,39 @@ const populateSecondPictureFrom = (image) => {
   secondPictureScroller.innerHTML = '';
   let shownImage = new Image();
   shownImage.src = image
+  shownImage.id = imageArray.indexOf(image)
   shownImage.classList.add('second-picture');
   secondPictureScroller.appendChild(shownImage);
 };
+
+const populatePictureIndicators = (() => {
+  for (let i = 0; i < imageArray.length; i++) {
+    let newIndicator = document.createElement('div');
+    newIndicator.classList.add('indicator');
+    newIndicator.id = i;
+    pictureIndicators.appendChild(newIndicator);
+    if(parseInt(newIndicator.id) === 0) {
+      newIndicator.classList.add('current-picture');
+    }
+  }
+})();
 
 populateSecondPictureFrom(imageArray[0]);
 
 const scrollSecondPictures = (() => {
   let secondPictures = document.querySelector('#second-pictures');
   let currentImage = 0;
+  const indicators = document.querySelectorAll('.indicator');
+
+  function indicateCurrentImage(images) {
+    const displayedImage = document.querySelector('.second-picture')
+    images.forEach((image) => {
+      image.classList.remove('current-picture');
+      if(image.id === displayedImage.id) {
+        image.classList.add('current-picture')
+      }
+    })
+  }
 
   function secondScrollLeft() {
     let secondNewImage = new Image();
@@ -97,6 +122,7 @@ const scrollSecondPictures = (() => {
       populateSecondPictureFrom(imageArray[currentImage]);
     }
 
+    indicateCurrentImage(indicators);
   }
 
   function secondScrollRight() {
@@ -110,6 +136,7 @@ const scrollSecondPictures = (() => {
       populateSecondPictureFrom(imageArray[currentImage]);
     }
 
+    indicateCurrentImage(indicators);
   }
 
   return { secondScrollLeft, secondScrollRight }
