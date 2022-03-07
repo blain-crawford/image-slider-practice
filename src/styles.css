@@ -116,3 +116,9 @@ body {
   font-size: 35px;
   border-left: 1.5px solid rgb(255, 255, 255);
 }
+
+#picture-indicator {
+  border: 3px solid black;
+  height: 2px;
+  width: 350px;
+}
